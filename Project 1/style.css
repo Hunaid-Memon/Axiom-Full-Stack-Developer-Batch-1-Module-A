@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
+:root {
+    --success-color: green;
+    --error-color: red;
+}
 
 *{
     box-sizing: border-box;
@@ -55,4 +59,37 @@ h2{
 .form-control input:focus{
     outline: 0;
     border-color: grey;
+}
+
+.form-control.success input{
+    border-color: var(--success-color);
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    cursor: pointer;
+    background-color: rgb(11, 11, 32);
+    border: 2px solid rgb(11, 11, 32);
+    border-radius: 5px;
+    color: white;
+    display: block;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
 }
