@@ -2,8 +2,8 @@
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
-const passward = document.getElementById('passward');
-const passward2 = document.getElementById('passward2');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
 //Function to update class and message for errors
 function showError(input, message) {
@@ -43,16 +43,16 @@ form.addEventListener('submit', function (e) {
     } else {
         showSuccess(email)
     }
-    //check if passward is empty
-    if (passward.value === '') {
-        showError(passward, 'passward is required')
+    //check if password is empty
+    if (password.value === '') {
+        showError(password, 'Password is required')
     } else {
-        showSuccess(passward)
+        showSuccess(password)
     }
-    //check if confirm passward is empty
-    if (passward2.value === '') {
-        showError(passward2, 'Confirm Passward is required')
+    //check if confirm password is empty
+    if (password2.value === '') {
+        showError(password2, 'Confirm Password is required')
     } else {
-        showSuccess(passward2)
+        showSuccess(password2)
     }
 })
