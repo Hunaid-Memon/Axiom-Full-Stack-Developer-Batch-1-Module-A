@@ -45,6 +45,7 @@ h2 {
     color: grey;
     display: block;
     margin-bottom: 5px;
+    padding-left: 3px;
 }
 
 .form-control input {
