@@ -33,26 +33,30 @@ form.addEventListener('submit', function (e) {
 
     //check if username is empty
     if (username.value === '') {
-        showError(username, 'Username is required')
+        showError(username, 'Username is required');
     } else {
-        showSuccess(username)
+        showSuccess(username);
+        username.value = '';
     }
     //check if email is empty
     if (email.value === '') {
-        showError(email, 'Email is required')
+        showError(email, 'Email is required');
     } else {
-        showSuccess(email)
+        showSuccess(email);
+        email.value = '';
     }
     //check if password is empty
     if (password.value === '') {
-        showError(password, 'Password is required')
+        showError(password, 'Password is required');
     } else {
-        showSuccess(password)
+        showSuccess(password);
+        password.value = '';
     }
     //check if confirm password is empty
     if (password2.value === '') {
-        showError(password2, 'Confirm Password is required')
+        showError(password2, 'Confirm Password is required');
     } else {
-        showSuccess(password2)
+        showSuccess(password2);
+        password2.value = '';
     }
 })

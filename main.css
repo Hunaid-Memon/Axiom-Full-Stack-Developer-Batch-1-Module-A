@@ -2,58 +2,147 @@
 
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-/* body {
+body {
     background-color: #70a1ff;
     font-family: 'Noto Sans JP', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    min-height: 100vh;
-} */
-
-
-nav ul {
-    overflow: auto;
-    background: blue;
-    display: block;
     
 }
 
-nav li {
+.navbar {
+    background-color: darkblue;
+    border-radius: 5px;   
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    overflow: auto; 
+}
+
+.navbar li {
+    margin: 20px 20px;
     float: left;
     list-style: none;
-    
 }
 
-nav a {
-    margin: 10px 10px;
-    
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 11px 55px;
+}
+
+.navbar a:hover{
+    cursor: pointer;
+    background-color: #70a1ff;
+    border-radius: 5px;
 }
 
 .container {
-    background-color: aliceblue;
     border-radius: 5px;
     box-shadow: 0 2px 10px blue;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    display: block;
     width: 400px;
     height: 550px;
 }
 
 h2 {
     text-align: center;
-    margin: 20px 20px;
+    padding: 20px 20px;
 }
 
 .container ul {
     padding: 20px 20px;
     margin: 20px 20px;
+    
 }
 
 ul a {
     text-decoration: none;
-    color: maroon;
+    color: darkblue;
     font-size: 18px;
     font-weight: bolder;
+}
+
+footer {
+    background-color: darkblue;
+    color: white;
+    padding: 9px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 607px) {
+    
+    
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 11px 20px;
+    }
+
+    
+.container {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px blue;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    display: block;
+    width: 350px;
+    height: 550px;
+}
+    
+}
+
+@media only screen and (max-width: 471px) {
+    
+    .navbar li {
+        margin: 10px 10px;
+        float: left;
+        list-style: none;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 14px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+    
+.container {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px blue;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    display: block;
+    width: 350px;
+    height: 550px;
+}
+    
 }

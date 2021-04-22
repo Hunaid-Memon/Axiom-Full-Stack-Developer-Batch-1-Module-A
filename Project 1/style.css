@@ -1,76 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 :root {
-    --success-color: green;
-    --error-color: red;
+    --success--color: green;
+    --error--color: orangered;
 }
 
-*{
+
+* {
     box-sizing: border-box;
-}
-
-body{
-    background-color: #dfe4ea;
-    font-family: 'Noto Sans JP', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    padding: 0;
     margin: 0;
 }
 
-.container{
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0,0, 0.4);
-    width: 400px;
+body {
+    background-color: #70a1ff;
+    font-family: 'Noto Sans JP', sans-serif;
+    
 }
 
-h2{
+.navbar {
+    background-color: darkblue;
+    border-radius: 5px;   
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    overflow: auto; 
+}
+
+.navbar li {
+    margin: 20px 20px;
+    float: left;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 11px 55px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.navbar a:hover{
+    cursor: pointer;
+    background-color: #70a1ff;
+    border-radius: 5px;
+}
+
+.container {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px blue;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    display: block;
+    width: 400px;
+    height: 550px;
+}
+
+
+h2 {
     text-align: center;
     margin: 0 0 20px;
+    font-weight: bolder;
 }
 
-.form{
+.form {
     padding: 30px 40px;
 }
 
-.form-control{
-    margin-bottom: 10px;
+.form-control {
     padding-bottom: 20px;
+    margin-bottom: 10px;
     position: relative;
 }
 
-.form-control label{
+.form-control label {
     color: grey;
     display: block;
     margin-bottom: 5px;
+    padding-left: 3px;
+    font-weight: bolder;
 }
 
-.form-control input{
-    border: 2px solid #dfe4ea;
-    border-radius: 5px;
+.form-control input {
     display: block;
     width: 100%;
-    padding: 10px;
-    font-size: 13px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 2px solid #70a1ff;
+    font-weight: bolder;
 }
 
-.form-control input:focus{
+.form-control input:focus {
     outline: 0;
-    border-color: grey;
+    border-color: darkblue;
 }
 
-.form-control.success input{
-    border-color: var(--success-color);
+.form-control.success input {
+    border-color: var(--success--color);
 }
 
 .form-control.error input {
-    border-color: var(--error-color);
+    border-color: var(--error--color)
 }
 
 .form-control small {
-    color: var(--error-color);
+    color: var(--error--color);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -82,14 +123,90 @@ h2{
 }
 
 .form button {
+    width: 100%;
     cursor: pointer;
-    background-color: rgb(11, 11, 32);
-    border: 2px solid rgb(11, 11, 32);
+    background-color: darkblue;
+    border: 2px solid darkblue;
     border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
     color: white;
     display: block;
-    font-size: 15px;
-    padding: 10px;
     margin-top: 20px;
+    font-weight: bolder;
+}
+
+
+@media only screen and (max-width: 607px) {
+    
+    
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 11px 20px;
+    }
+
+    
+.container {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(rgb(0, 47, 255,0.5), green, blue, alpha);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    display: block;
+    width: 350px;
+    height: 550px;
+}
+    
+}
+
+
+footer {
+    background-color: darkblue;
+    color: white;
+    padding: 9px 20px;
+    position: absolute;
+    bottom: 0;
     width: 100%;
+}
+
+footer p {
+    text-align: center;
+}
+
+@media only screen and (max-width: 471px) {
+    
+    .navbar li {
+        margin: 10px 10px;
+        float: left;
+        list-style: none;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 14px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+    
+.container {
+    border-radius: 5px;
+    box-shadow: 0 2px 10px blue;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    margin: auto;
+    display: block;
+    width: 350px;
+    height: 550px;
+}
+    
 }
