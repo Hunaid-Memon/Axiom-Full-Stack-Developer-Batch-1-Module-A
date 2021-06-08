@@ -46,10 +46,54 @@ function updateDOM(userData = data){
         const userDiv = document.createElement('div');
         userDiv.classList.add('user');
 
-        userDiv.innerHTML = `<strong>${user.name}</strong> ${user.balance}`;
+        userDiv.innerHTML = `<strong>${user.name}</strong> ${formatNumberToDollar(user.balance)}`;
         main.appendChild(userDiv);
     })
 }
 
+function formatNumberToDollar(number){
+    return number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+}
+
+function doubleMoney(){
+    data = data.map(user => {
+        return {
+            ...user , balance: user.balance * 2
+        }
+    });
+    updateDOM()
+}
+
+function filterUser(){
+    // data = data.filter(user => user.balance >= 1000000);
+    data = data.filter(function(user){
+        return user.balance >= 1000000;
+    })
+
+    updateDOM()
+}
+
+function sortByBalance(){
+    data = data.sort((a,b) => a.balance - b.balance)
+    updateDOM();
+}
+
+function totalBalance(){
+    updateDOM();
+    const balance = data.reduce((acc,user) => (acc += user.balance), 0);
+    const balanceElement = document.createElement('div');
+    balanceElement.innerHTML = `<h3>Total Balance: ${formatNumberToDollar(balance)}</h3>`;
+    main.appendChild(balanceElement)
+}
+
+addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
+filterBtn.addEventListener('click', filterUser);
+sortBtn.addEventListener('click', sortByBalance);
+sumBtn.addEventListener('click', totalBalance)
+
+
+getRandomUser();
+getRandomUser();
 getRandomUser();
 getRandomUser();
