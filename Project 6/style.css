@@ -1,62 +1,70 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 
 :root{
+    --primary-color: #558776;
+    --seconday-color: #EAE2B6;
     --modal-duration: 1s;
-    --primary-color: #227093;
-    --secondary-color: #d1ccc0;
 }
+
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     transition: transform 0.5s ease;
 }
 
+body.show-nav{
+    transform: translate(300px);
+}
+
 nav{
     background-color: var(--primary-color);
-    border-right: 2px solid rgba(210,210,210,0.1);
-    color: #ffffff;
+    border: 3px solid rgba(200,200,200,0.3);
+    width: 300px;
     position: fixed;
-    width: 200px;
-    height: 100vh;
+    top: 0;
+    left: 0;
     z-index: 100;
+    height: 100vh;
+    color: white;
     transform: translateX(-100%);
 }
+
 
 nav .logo{
     padding: 30px 0;
     text-align: center;
 }
 
-nav .logo img {
-    height: 70px;
-    width: 70px;
-    border-radius: 50px;
+nav .logo img{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
 }
 
 nav ul {
-    background-color: red;
-    padding: 0;
-    list-style: none;
     margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 nav ul li {
-    border-bottom: 2px solid var(--secondary-color);
     padding: 20px;
+    border-bottom: 2px solid rgba(200,200,200,0.3);
 }
 
 nav ul li:first-of-type{
-    border-top: 2px solid var(--secondary-color);
+    border-top: 2px solid rgba(200,200,200,0.3);
 }
 
-nav ul li a {
+
+nav ul li a{
     text-decoration: none;
+    font-size: 24px;
     color: white;
 }
 
@@ -65,16 +73,15 @@ nav ul li a:hover{
 }
 
 header {
+    position: relative;
     background-color: var(--primary-color);
     color: white;
+    text-align: center;
+    padding: 20px 30px;
     font-size: 150%;
-    position: relative;
-    padding: 40px 15px;
-    text-align:center;
 }
 
-header h1 {
-    background-color: rgb(52, 34, 70);
+header h1{
     margin: 0;
 }
 
@@ -83,30 +90,30 @@ header p {
 }
 
 button{
+    background-color: --var(--seconday-color);
     cursor: pointer;
+    border-radius: 50px;
+    padding: 20px;
     border: 0;
-    border-radius: 5px;
-    color: black;
-    background-color: var(--secondary-color);
-    padding: 8px 10px;
+    font-size: 120%;
 }
 
 button:focus{
-    outline: none;
+    outline: 0;
 }
 
 .toggle{
-    background-color: rgba(0,0,0,0.3);
     position: absolute;
-    color: white;
     top: 20px;
     left: 20px;
+    background-color: rgba(200,200,200,0.3);
 }
 
-.cta-btn{
-    padding: 10px 20px;
-    font-size: 24px;
+.cta{
+    border-radius: 5px;
 }
+
+
 
 .container {
     padding: 15px;
@@ -116,74 +123,87 @@ button:focus{
 }
 
 .modal-container{
-    background-color: rgba(0,0,0,0.6);
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 251, 251, 0.9);
     display: none;
 }
 
-.modal-container.show-modal {
+.modal-container.show{
     display: block;
 }
 
-.modal {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+.modal{
+    background-color: var(--seconday-color);
+    border-radius: 5px;
+    box-shadow: 0 10px 9px rgba(37, 34, 34, 0.3);
     position: absolute;
     overflow: hidden;
     top: 50%;
     left: 50%;
-    transform: translate(-50% -50%);
+    transform: translate(-50%, -50%);
     max-width: 100%;
     width: 400px;
-    /* animation-name: modalopen;
-    animation-duration: var(--modal-duration); */
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
 }
 
-.modal-header {
+.modal-header{
+    padding: 15px;
     background-color: var(--primary-color);
     color: white;
-    padding: 15px;
 }
 
-.modal-header h3{
+.modal-header h2{
     margin: 0;
 }
 
-.modal-content {
-    padding: 20px;
+.modal-content{
+    padding: 15px;
 }
 
 .modal-form div{
     margin: 15px 0;
 }
 
-.modal-form label {
-    margin-bottom: 5px;
+.modal-form label{
     display: block;
+    padding-bottom: 2px;
 }
 
-.modal-forn input {
-    padding: 10px;
+.modal-form input{
     width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
 }
 
-.close-btn {
+.submit-btn{
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 23px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.close-btn{
     background-color: transparent;
     color: white;
     position: absolute;
-    top: 3px;
+    top: 0;
     right: 0;
-    font-size: 24px;
-
+    font-size: 150%;
 }
 
-body.show-nav {
-    transform: translate(200);
+@keyframes modalopen {
+    from{
+        opacity: 0;
+    }
+    to{
+            opacity: 1;
+    }
 }
-
-
