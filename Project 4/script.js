@@ -1,28 +1,33 @@
 const currencyOne = document.getElementById('currency-one');
+const amountOne = document.getElementById('amount-one');
 const currencyTwo = document.getElementById('currency-two');
-const amountCurrencyOne = document.getElementById('amount-one');
-const amountCurrencyTwo = document.getElementById('amount-two');
+const amountTwo = document.getElementById('amount-two');
 const rate = document.getElementById('rate');
 const swap = document.getElementById('swap');
 
 
-function calculate(){
-    const currencyOneCode = currencyOne.value;
-    const currencyTwoCode = currencyTwo.value;
-    console.log(currencyOneCode, currencyTwoCode);
-    fetch(`https://v6.exchangerate-api.com/v6/90090eb878113fc17b55d8d7/pair/${currencyOneCode}/${currencyTwoCode}`)
+function calculate() {
+    const currencyCodeOne = currencyOne.value;
+    const currencyCodeTwo = currencyTwo.value;
+    console.log(currencyCodeOne, currencyCodeTwo);
+    fetch(`https://v6.exchangerate-api.com/v6/90090eb878113fc17b55d8d7/pair/${currencyCodeOne}/${currencyCodeTwo}`)
         .then(res => res.json())
         .then(data => {
-            const conversionRate = data.conversion_rate;
-            rate.innerText = `1 ${currencyOneCode} ${conversionRate} ${currencyTwoCode}`;
-            amountCurrencyTwo.value = (amountCurrencyOne.value * conversionRate).toFixed(2);
-        });
+            const exchangeRate = data.conversion_rate;
+            if (amountOne.value >= 0) {
+                rate.innerText = `1 ${currencyCodeOne} =  ${exchangeRate} ${currencyCodeTwo}`;
+                amountTwo.value = (exchangeRate * amountOne.value).toFixed(2)
+            }else{
+                alert('Please Enter Positive Value!')
+            }
+        })
 }
 
+
 currencyOne.addEventListener('change', calculate);
-amountCurrencyOne.addEventListener('input', calculate);
+amountOne.addEventListener('input', calculate);
 currencyTwo.addEventListener('change', calculate);
-amountCurrencyTwo.addEventListener('input', calculate);
+amountTwo.addEventListener('input', calculate);
 
 swap.addEventListener('click', () => {
     const temp = currencyOne.value;
@@ -30,5 +35,6 @@ swap.addEventListener('click', () => {
     currencyTwo.value = temp;
     calculate();
 })
+
 
 calculate();

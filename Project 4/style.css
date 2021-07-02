@@ -1,72 +1,67 @@
-
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: #bdd2b6;
+    background-color: dimgray;
+    font-family: fantasy;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 20ox;
-}
-
-h1 {
-    color: #2b2e4a;
-}
-
-p{
     text-align: center;
-}
-
-.btn {
-    background-color: #2b2e4a;
-    color: white;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
-    padding: 2px 10px;
-}
-
-.currency {
-    padding: 40px 0;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    color: white;
+    letter-spacing: 3px;
+    word-wrap: break-word;
 }
 
-.currency select {
-    padding: 10px 20px 10px 10px;
-    border: 1px solid #87ac7a;
-    font-size: 15px;
-    background-color: transparent;
+.container{
+    width: 800px;
+    margin-top: 50px;
 }
 
-.currency input {
-    border: 0;
-    background-color: transparent;
+.currency{
+    margin: 30px 0;
+}
+
+.currency input{
+    padding: 10px 0;
     text-align: right;
-    font-size: 20px;
-    font-weight: bold;
+    background-color: transparent;
+    border: 0;
+    font-weight: bolder;
+    font-size: 19px;
+}
+
+.currency select{
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid darkslategrey;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    font-size: 19px;
 }
 
 .swap-rate-container{
-    /* background-color: red; */
     display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 3px solid darkslategrey;
+    padding: 20px 20px;
+    font-size: 19px;
+}
+
+.rate{
+    font-size: 19px;
+    color: black;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-}
-
-.rate {
-    background-color: teal;
-    color: #2b2e4a;
-    padding: 0 10px;
-    font-size: 20px;
-}
-
-select:focus , input:focus , button:focus {
-    outline: 0;
 }
